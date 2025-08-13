@@ -1,0 +1,7 @@
+for col in num_cols:
+    lower = df[col].quantile(0.01)
+    upper = df[col].quantile(0.99)
+    df[col] = np.clip(df[col], lower, upper)
+
+scaler = MinMaxScaler()
+df[num_cols] = scaler.fit_transform(df[num_cols])
