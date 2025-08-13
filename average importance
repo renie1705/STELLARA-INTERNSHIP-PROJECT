@@ -1,0 +1,6 @@
+feat_scores.mean(axis=1).sort_values().plot(kind='barh', figsize=(8, 6))
+plt.title("Average Feature Importance")
+plt.xlabel("Importance")
+plt.ylabel("Features")
+plt.tight_layout()
+plt.show()
