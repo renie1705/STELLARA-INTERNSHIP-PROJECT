@@ -1,0 +1,9 @@
+rf = RandomForestClassifier(random_state=42).fit(X, y)
+ada = AdaBoostClassifier(random_state=42).fit(X, y)
+xgb = XGBClassifier(use_label_encoder=False, eval_metric='logloss', random_state=42).fit(X, y)
+
+feat_scores = pd.DataFrame({
+    'RandomForest': rf.feature_importances_,
+    'AdaBoost': ada.feature_importances_,
+    'XGBoost': xgb.feature_importances_
+}, index=X.columns)
