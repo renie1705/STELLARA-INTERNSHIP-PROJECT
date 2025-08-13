@@ -1,0 +1,7 @@
+with open("config.yaml", "r") as file:
+    config = yaml.safe_load(file)
+
+data_path = config["file_path"]
+
+# 📄 Load dataset
+df = pd.read_csv(data_path)
