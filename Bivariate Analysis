@@ -1,0 +1,5 @@
+for col in num_cols:
+    plt.figure(figsize=(6, 4))
+    sns.boxplot(x=y, y=df[col])
+    plt.title(f'{col} vs Churn')
+    plt.show()
