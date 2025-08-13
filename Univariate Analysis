@@ -1,0 +1,11 @@
+for col in num_cols:
+    plt.figure(figsize=(12, 4))
+    plt.subplot(1, 2, 1)
+    sns.histplot(df[col], kde=True)
+    plt.title(f'Histogram of {col}')
+
+    plt.subplot(1, 2, 2)
+    sns.boxplot(x=df[col])
+    plt.title(f'Boxplot of {col}')
+    plt.tight_layout()
+    plt.show()
