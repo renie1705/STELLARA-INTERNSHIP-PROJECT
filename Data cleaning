@@ -1,0 +1,8 @@
+df = df[df.isnull().mean(axis=1) < 0.7]  # Remove rows with >70% missing
+num_cols = df.select_dtypes(include=np.number).columns  # Numeric columns
+
+# Impute missing numeric values with mean
+imputer = SimpleImputer(strategy="mean")
+df[num_cols] = imputer.fit_transform(df[num_cols])
+
+df.drop_duplicates(inplace=True)
