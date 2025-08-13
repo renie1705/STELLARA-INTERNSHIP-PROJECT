@@ -1,0 +1,9 @@
+if 'Churn' in df.columns:
+    df['Churn'] = df['Churn'].map({'Yes': 1, 'No': 0})
+
+y = df['Churn']
+X = df[num_cols]
+
+# Confirm no NaNs
+assert not X.isnull().any().any(), "There are still NaNs in X"
+assert not y.isnull().any(), "There are NaNs in y"
